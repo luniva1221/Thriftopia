@@ -1,0 +1,44 @@
+   <form>
+  <div class="form-group">
+    Email: <input type="email" name="email" required><br>
+    Username: <input type="text" name="username" required><br>
+    Password: <input type="password" name="password" required><br>
+    Address: <input type="text" name="address" required><br>
+    Role:
+    <select name="role" required>
+      <option value="seller">Seller</option>
+      <option value="buyer">Buyer</option>
+    </select><br><br>
+    <input type="submit" value="Register">
+  </div>
+</form>
+
+
+<style>
+input[type="submit"] {
+  background-color: #099e57; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  line-height:1.0;
+}
+
+input[type="submit"]:hover {
+  background-color: #077b45; 
+}
+
+input[type="submit"]:active {
+  background-color: #055e34; 
+}
+</style>
+
+<style>
+  .form-group {
+    line-height: 2.5; /* Adjust spacing as needed */
+  }
+</style>
+
