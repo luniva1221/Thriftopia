@@ -24,8 +24,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 80px;
+      padding: 20px 60px;
       background-color: #f9f5d7;
+      height:100px;
     }
 
     .logo {
@@ -39,7 +40,7 @@
       text-decoration: none;
       color: black;
       font-weight: bold;
-      font-size:20px;
+      font-size:25px; 
     }
 
     nav a.signin {
@@ -48,6 +49,10 @@
       padding: 6px 12px;
       border-radius: 6px;
     }
+    .signin:hover {
+     background-color: #019e54;       
+     transform: scale(1.05);         
+    }
     
 
     .hero {
@@ -55,45 +60,53 @@
       justify-content: space-between;
       align-items: center;
       padding: 40px 40px;
+      gap:20px;
+      height: calc(100vh - 100px); /* takes remaining screen space below header */
+  overflow: hidden;
     }
 
     .hero-text {
       max-width: 45%;
+      padding-left: 60px;
     }
 
     .hero-text h1 {
-      font-size: 48px;
+      font-size: 55px;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
     .hero-text p {
-      font-size: 18px;
+      font-size: 24px;
       margin-bottom: 20px;
     }
 
     .get-started {
       background-color: #00b167;
       color: black;
-      padding: 12px 24px;
-      border-radius: 25px;
+      padding: 14px 26px;
+      border-radius: 28px;
       text-decoration: none;
       font-weight: bold;
       border: 2px solid black;
       display: inline-block;
+      font-size:20px;
     }
-
+    .get-started:hover {
+  background-color: #019e54;       /* Subtle hover effect */
+  transform: scale(1.05);          /* Slight enlargement on hover */
+}
     .hero-images {
       background-color: #fff3b0;
       border-radius: 50%;
-      width: 480px;
-      height: 480px;
+      width: 600px;
+      height: 600px;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       flex-wrap: wrap;
-      padding: 20px;
+      padding: 1px;
     }
 
     .hero-images img {
@@ -112,7 +125,10 @@
 <body>
 
   <header>
-    <div class="logo">Thriftopia</div>
+    <div class="logo">
+      <img src="new logo.png" alt="Thriftopia Logo"style="height: 90px; width: auto;">
+</div>
+
     <nav>
       <a href="#">HOME</a>
       <a href="#">SHOP</a>
@@ -130,9 +146,9 @@
     </div>
 
     <div class="hero-images">
+      <img src="flower.jpeg.png" alt="Flower"> <!-- Fixed filename -->
        <img src="Carhartbg.png" alt="carhartt jacket" class="fashion-item-1">
-  <img src="flower.jpeg" alt="Flower"> <!-- Fixed filename -->
-  <img src="smith.jpeg.png" alt="Smith"> <!-- Closed tag and added alt -->
+  <img src="smith.png" alt="Smith"> <!-- Closed tag and added alt -->
   <img src="dopefit.png" alt="fit" class="fashion-item-2"> <!-- Fixed class syntax -->
     </div>
   </section>
