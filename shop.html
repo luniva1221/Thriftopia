@@ -1,0 +1,177 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop</title>
+
+  <!-- Font Awesome (Using CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topnav">
+    <h1>SHOP</h1>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+
+    <!-- Sidebar with outline-style icons -->
+    <aside class="sidebar">
+      <button title="Home"><i class="fa-solid fa-house"></i></button>
+      <button title="Add"><i class="fa-solid fa-square-plus"></i></button>
+      
+    </aside>
+
+    <!-- Main Content -->
+    
+
+</body>
+</html>
+
+<main>
+      <div class="grid">
+        <div class="item">
+          <img src="Long sleeve.jpeg" alt="long sleeve shirt">
+          <p>long sleeve shirt</p>
+        </div>
+        <div class="item">
+          <img src="images/tshirt.jpg" alt="T-shirt">
+          <p>T-shirt</p>
+        </div>
+        <div class="item">
+          <img src="images/half-shirt.jpg" alt="Half Shirt">
+          <p>Half shirt</p>
+        </div>
+        <div class="item">
+          <img src="images/jeans.jpg" alt="Jean pants">
+          <p>Jean pants</p>
+        </div>
+        <div class="item">
+          <img src="images/striped-tshirt.jpg" alt="Striped T-shirt">
+          <p>Striped T-shirt</p>
+        </div>
+        <div class="item">
+          <img src="images/top.jpg" alt="Top">
+          <p>Top</p>
+        </div>
+        <div class="item">
+          <img src="images/flower-crop.jpg" alt="Flower Printed Crop Top">
+          <p>Flower printed crop top</p>
+        </div>
+        <div class="item">
+          <img src="images/flower-top.jpg" alt="Flower Printed Top">
+          <p>Flower printed top</p>
+          
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color:#eeebeb;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top Navbar */
+.topnav {
+  background-color:#b8d4e0;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.topnav h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+/* Main Layout */
+.container {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #e8e7dc;
+  padding: 1rem 0;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.sidebar button i {
+  font-size: 1.6rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.sidebar button:hover i {
+  color: #555;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.item {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+</style>
