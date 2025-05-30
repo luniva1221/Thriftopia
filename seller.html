@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #d2e7f0;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background-color: #c5d0d6;
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1rem;
+      gap: 1.5rem;
+      
+    }
+
+    .sidebar i {
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .sidebar i:hover {
+      color: #555;
+    }
+
+    /* Main content */
+    .product-page {
+      background-color: #dfebf0;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .product-card {
+      background-color: #dfebf0;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .product-image img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product-details h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-details .price {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .product-details p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .seller {
+      margin-top: 1rem;
+    }
+
+    .seller-title {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .seller-title i {
+      margin-right: 0.5rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      width: calc(50% - 1rem);
+    }
+
+    input:focus {
+      outline: 2px solid #d5d8dc;
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .product-image img {
+        width: 200px;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+    .upload-section {
+  display: none; /* hidden at first */
+}
+.upload-section.active {
+  display: block; /* show when 'active' class is added */
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <i class="fa-solid fa-house"></i>
+    <i class="fa-solid fa-plus"></i>
+    <button id="addProductBtn" title="Add"><i class="fa-solid fa-square-plus"></i></button>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="product-page">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="vintage.jpeg" alt="Flower printed crop top">
+      </div>
+      <div class="product-details">
+        <h2>Flower printed crop top</h2>
+        <div class="price">Rs. 550</div>
+        <p>“Gently used and in excellent condition. Clean, washed, and ready to wear!”</p>
+
+        <div class="seller">
+          <div class="seller-title"><i class="fa-solid fa-user"></i>SELLER :</div>
+          <div class="input-group">
+            <input type="text" placeholder="User name">
+            <input type="text" placeholder="Contact">
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Instagram">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  const addBtn = document.getElementById('addProductBtn');
+  const uploadSection = document.querySelector('.upload-section');
+
+  addBtn.addEventListener('click', () => {
+    uploadSection.classList.toggle('active'); // show/hide the form
+  });
+
+  // Existing code for form submission (keep this below)
+  document.getElementById('productForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const imageInput = document.getElementById('productImage');
+    const name = document.getElementById('productName').value;
+    const price = document.getElementById('productPrice').value;
+    const file = imageInput.files[0];
+
+    if (!file || !file.type.startsWith('image/')) {
+      alert('Please upload a valid image file.');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const imageUrl = event.target.result;
+
+      const newItem = document.createElement('div');
+      newItem.className = 'item';
+      newItem.innerHTML = `
+        <img src="${imageUrl}" alt="${name}">
+        <p><strong>${name}</strong></p>
+        <p>Rs. ${price}</p>
+      `;
+
+      document.querySelector('.grid').prepend(newItem);
+    };
+
+    reader.readAsDataURL(file);
+    document.getElementById('productForm').reset();
+    uploadSection.classList.remove('active'); // hide the form after adding
+  });
+</script>
+
+
+</body>
+</html>

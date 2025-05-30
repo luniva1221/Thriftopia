@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thriftopia</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Sarabun', sans-serif;
+    }
+
+
+
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      column-count: 4;
+      column-gap: 10px;
+      padding: 10px;
+    }
+
+    .background-grid img {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      break-inside: avoid;
+    }
+
+    .overlay {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3); /* Optional tint */
+    }
+
+    .overlay-content {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .overlay-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .overlay-content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .get-started {
+      background-color: #00b167;
+      color: black;
+      padding: 14px 26px;
+      border-radius: 28px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid black;
+      font-size: 20px;
+    }
+
+    .get-started:hover {
+      background-color: #019e54;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .background-grid {
+        column-count: 2;
+      }
+
+      .overlay-content h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pinterest-Style Masonry Background -->
+  <div class="background-grid">
+    <img src="skirt.jpg" alt="">
+    <img src="christmas.jpg" alt="">
+    <img src="frok.jpg" alt="">
+    <img src="dadsweater.jpg" alt="">
+    <img src="kurtha.jpg" alt="">
+    <img src="lehenga.jpg" alt="">
+   
+  </div>
+
+  <!-- Centered Overlay Content -->
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>WELCOME TO THRIFTOPIA</h1>
+      <p>An Online Thrift Promoting Sustainable Fashion</p>
+      <a href="#" class="get-started">GET STARTED</a>
+    </div>
+  </div>
+
+</body>
+</html>

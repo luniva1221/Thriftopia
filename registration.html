@@ -1,44 +1,150 @@
-   <form>
-  <div class="form-group">
-    Email: <input type="email" name="email" required><br>
-    Username: <input type="text" name="username" required><br>
-    Password: <input type="password" name="password" required><br>
-    Address: <input type="text" name="address" required><br>
-    Role:
-    <select name="role" required>
-      <option value="seller">Seller</option>
-      <option value="buyer">Buyer</option>
-    </select><br><br>
-    <input type="submit" value="Register">
-  </div>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account - Thriftopia</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #b8d4e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-<style>
-input[type="submit"] {
-  background-color: #099e57; 
-  color: white;
-  padding: 10px 20px;
+    .form-container {
+      background-color: #f9f7f5;
+      padding: 30px 40px;
+      border-radius: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .form-container .form-header {
+      background-color: #e0ddda;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 15px;
+    }
+    .form-group select {
+  appearance: none;             /* Remove default OS styling */
+  -webkit-appearance: none;     /* For Safari */
+  -moz-appearance: none;        /* For Firefox */
+  background-color: #d0cdc7;
   border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  line-height:1.0;
+  border-radius: 10px;
+  padding: 8px 30px 8px 10px;   /* Extra right padding for the arrow */
+  font-size: 14px;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="black" d="M0 0l5 7 5-7z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* arrow on the right inside box */
+  background-size: 12px;
+  cursor:pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #077b45; 
-}
 
-input[type="submit"]:active {
-  background-color: #055e34; 
-}
-</style>
+    .form-group input,
+    .form-group select {
+      padding: 8px 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #dbdad8;
+      font-size: 14px;
+    }
 
-<style>
-  .form-group {
-    line-height: 2.5; /* Adjust spacing as needed */
-  }
-</style>
+    input[type="submit"] {
+      background-color: rgb(40, 182, 182); 
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+    }
 
+    input[type="submit"]:hover {
+      background-color: #077b45; 
+    }
+
+    input[type="submit"]:active {
+      background-color: #055e34; 
+    }
+
+    label {
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+
+    select {
+      appearance: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Create an account</h2>
+    <div class="form-header">Register</div>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="yourname@example.com" required>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" placeholder="Address" required>
+
+        <label for="role">Role:</label>
+        <select name="role" required>
+          <option value="seller">Seller</option>
+          <option value="buyer">Buyer</option>
+        </select>
+
+        <input type="submit" value="Create account">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting (for demo)
+      
+      const formData = new FormData(this);
+      const values = Object.fromEntries(formData.entries());
+
+      alert("Account created for: " + values.username + " as " + values.role);
+      // You can replace this with an actual API call or backend logic
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Thriftopia</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #b8d4e0;
+      background-color: rgba(0,0,0,0.1);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color:#f9f7f5;
+      padding: 40px 30px;
+      border-radius: 25px;
+      width: 350px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .title-banner {
+      background-color: none;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color:#e0ddda;
+      font-size: 14px;
+    }
+
+    .forgot {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    .forgot a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .login-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      border-radius: 35px;
+      border: none;
+      background-color: rgb(40, 182, 182);
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #077b45 ;
+      transform: scale(1.03);
+    }
+    .login-btn:active {
+      background-color: #055e34 ;
+      transform: scale(1.03);
+    }
+
+    .or-divider {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    .or-divider a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Welcome to Thriftopia</h2>
+   
+
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Name" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="********" required>
+
+      <div class="forgot"><a href="#">Forgot password?</a></div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="or-divider">
+      or<br>
+      <a href="#">create an account?</a>
+    </div>
+  </div>
+
+  <script>
+    // Sample JavaScript handling form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent actual submission
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Example login check
+      if (username === "admin" && password === "1234") {
+        alert("Login successful!");
+      } else {
+        alert("Invalid credentials. Try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
