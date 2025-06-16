@@ -5,39 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | Thriftopia</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #b8d4e0;
+      box-sizing: border-box;
+      font-family: 'Sarabun', sans-serif;
+    }
+
+    body {
+    
+      background: linear-gradient(
+    to bottom,
+    #fdfcfb 0%,
+    #fbe4e1 25%,
+    #e6d5f7 50%,
+    #d9ebfa 75%,
+    #d6ebfa 100%
+    
+  );
       background-color: rgba(0,0,0,0.1);
       font-family: 'Segoe UI', sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
+      padding: 20px 60px;
+     
+      height: 95px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      font-family: 'Pacifico', cursive;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    nav a.signin {
+      background-color: #017a3e;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .signin:hover {
+      background-color: #019e54;
+      transform: scale(1.05);
     }
 
     .login-container {
-      background-color:#f9f7f5;
+      background-color: #f9f7f5;
       padding: 40px 30px;
       border-radius: 25px;
       width: 350px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       text-align: center;
+      margin: 40px auto;
     }
 
     h2 {
       font-size: 28px;
       margin-bottom: 30px;
-    }
-
-    .title-banner {
-      background-color: none;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      font-weight: bold;
-      font-size: 10px;
     }
 
     label {
@@ -53,7 +94,7 @@
       padding: 10px;
       border-radius: 10px;
       border: none;
-      background-color:#e0ddda;
+      background-color: #e0ddda;
       font-size: 14px;
     }
 
@@ -83,11 +124,12 @@
     }
 
     .login-btn:hover {
-      background-color: #077b45 ;
+      background-color: #077b45;
       transform: scale(1.03);
     }
+
     .login-btn:active {
-      background-color: #055e34 ;
+      background-color: #055e34;
       transform: scale(1.03);
     }
 
@@ -102,13 +144,39 @@
       font-weight: bold;
     }
 
+  
+  .create-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .create-link:hover {
+    color: #555; /* slightly lighter */
+  }
+
+
   </style>
 </head>
 <body>
 
+  <!-- HEADER SAME AS HOMEPAGE -->
+  <header>
+    <div class="logo">
+      <img src="new logo.png" alt="Thriftopia Logo" style="height: 90px; width: auto;">
+    </div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="#">SHOP</a>
+      <a href="#">About Us</a>
+      <a href="login.html" class="signin">Log In</a>
+    </nav>
+  </header>
+
+  <!-- LOGIN FORM -->
   <div class="login-container">
     <h2>Welcome to Thriftopia</h2>
-   
 
     <form id="loginForm">
       <label for="username">Username</label>
@@ -124,18 +192,18 @@
 
     <div class="or-divider">
       or<br>
-      <a href="#">create an account?</a>
+     
+      <p>Don't have an account? <a href="register.html" class="create-link">Create an account</a></p>
+
     </div>
   </div>
 
   <script>
-    // Sample JavaScript handling form submission
     document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // prevent actual submission
+      event.preventDefault();
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
-      // Example login check
       if (username === "admin" && password === "1234") {
         alert("Login successful!");
       } else {
@@ -143,6 +211,5 @@
       }
     });
   </script>
-
 </body>
 </html>

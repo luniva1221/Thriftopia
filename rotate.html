@@ -15,15 +15,7 @@
     }
 
     body {
-     background: linear-gradient(
-    to bottom,
-    #fdfcfb 0%,
-    #fbe4e1 25%,
-    #e6d5f7 50%,
-    #c2e0f7 75%,
-    #9fd0f1 100%
     
-  );
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -49,6 +41,10 @@
       font-weight: bold;
       font-family: 'Pacifico', cursive;
     }
+    .logo img {
+  height: 70px;
+  width: auto;
+}
 
     nav a {
       margin-left: 30px;
@@ -78,7 +74,15 @@
       height: calc(100vh - 100px); 
       overflow: hidden;
       position: relative;
- 
+  background: linear-gradient(
+    to bottom,
+    #fdfcfb 0%,
+    #fbe4e1 25%,
+    #e6d5f7 50%,
+    #c2e0f7 75%,
+    #9fd0f1 100%
+    
+  );
     }
     
     .hero-text {
@@ -242,20 +246,19 @@ html {
   </style>
 </head>
 <body>
+<header>
+  <div class="logo">
+    <img src="new logo.png" alt="Thriftopia Logo" />
+  </div>
 
-  <header>
-    <div class="logo">
-      <img src="new logo.png" alt="Thriftopia Logo"style="height: 90px; width: auto;">
-</div>
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">SHOP</a>
+    <a href="#">About Us</a>
+    <a href="#" class="signin">Log In</a>
+  </nav>
+</header>
 
- <nav>
-      <a href="#">HOME</a>
-      <a href="#">SHOP</a>
-      <a href="#">About Us</a>
-      <a href="#" class="signin">Log In</a>
-   
-    </nav>
-  </header>
 
   <section class="hero">
     <div class="hero-text">
@@ -283,6 +286,7 @@ html {
   <p>"Buy or sell pre-loved fashion from real people."
   </p>
   
+  
   <div class="image-grid">
     <div class="image-card">
       <img src="frok.jpg" alt="Fashion look">
@@ -297,13 +301,13 @@ html {
       
     </div>
   </div>
-  <p>"Style isn't about price-it's about attitude."</p>
+  
   <a href="#section3" class="down-arrow">&#8595;</a>
 
 </section>
 
 <!-- ↓ New sliding section 2 -->
-<section class="slide-section" id="section3" style="background-color: yellow;">
+<section class="slide-section" id="section3" style="background-color: #fbe4e1;">
   <h1>What Will You Discover Today?</h1>
   <p>Search for something you love—start your thrift journey now.</p>
   

@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop</title>
-
-  <!-- Font Awesome (Using CDN) -->
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- CSS -->
@@ -13,7 +12,6 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
   <header class="topnav">
     <h1>SHOP</h1>
   </header>
@@ -24,10 +22,8 @@
     <!-- Sidebar with outline-style icons -->
     <aside class="sidebar">
       <button title="Home"><i class="fa-solid fa-house"></i></button>
-      <button title="Add"><i class="fa-solid fa-square-plus"></i></button>
+  
       <button id="addProductBtn" title="Add"><i class="fa-solid fa-square-plus"></i></button>
-
-      
     </aside>
 
     <section class="upload-section">
@@ -48,49 +44,18 @@
     <button type="submit">Add Product</button>
   </form>
 </section>
+<section class="grid">
+  <!-- Products will appear here -->
+</section>
+
 
     
 
 </body>
 </html>
-
-<main>
-      <div class="grid">
-        <div class="item">
-          <img src="images/flower-crop.jpeg" alt="long sleeve shirt">
-          <p>long sleeve shirt</p>
-        </div>
-        <div class="item">
-          <img src="images/top.jpeg" alt="T-shirt">
-          <p>T-shirt</p>
-        </div>
-        <div class="item">
-          <img src="images/jeans.jpeg" alt="Half Shirt">
-          <p>Half shirt</p>
-        </div>
-        <div class="item">
-          <img src="images/jeans.jpg" alt="Jean pants">
-          <p>Jean pants</p>
-        </div>
-        <div class="item">
-          <img src="images/striped-tshirt.jpg" alt="Striped T-shirt">
-          <p>Striped T-shirt</p>
-        </div>
-        <div class="item">
-          <img src="images/top.jpg" alt="Top">
-          <p>Top</p>
-        </div>
-        <div class="item">
-          <img src="images/flower-crop.jpg" alt="Flower Printed Crop Top">
-          <p>Flower printed crop top</p>
-        </div>
-        <div class="item">
-          <img src="images/flower-top.jpg" alt="Flower Printed Top">
-          <p>Flower printed top</p>
-          
-        </div>
-      </div>
-    </main>
+<section class="grid">
+  <!-- This is where products will be displayed -->
+</section>
   </div>
 
 </body>
@@ -166,9 +131,6 @@ main {
   padding: 2rem;
   overflow-y: auto;
 }
-
-
-
 
 .item {
   display: inline-block;
@@ -267,9 +229,19 @@ main {
 #productForm button:hover {
   background-color: #555;
 }
+.grid {
+  flex: 1;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive columns */
+  gap: 1rem;
+  max-height: 100%; /* Avoid overflow */
+  overflow-y: auto;  /* Scroll if needed */
+}
 
 
 </style>
+
 <script>
   const addBtn = document.getElementById('addProductBtn');
   const uploadSection = document.querySelector('.upload-section');
