@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,3 +308,170 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thriftopia – Terms & Conditions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0ecec;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      background-color: white;
+      margin: 20px auto;
+      padding: 10px 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+      font-size:16px;
+    }
+
+    h2 {
+      font-size: 12px;
+      margin-top: -5px;
+      margin-bottom: 2px;
+    }
+
+    ul {
+      margin-left: -18px;
+      font-size:12px;
+      margin-top:2px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size:13px;
+    }
+
+    /* Custom checkbox */
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      background-color: #cce0ea;
+      border-radius: 10px;
+      padding: 8px 30px;
+      cursor: pointer;
+      width: fit-content;
+      user-select: none;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      display: none;
+
+    }
+
+    .custom-checkbox {
+      width: 18px;
+      height: 14px;
+      background-color: white;
+      border: 2px solid #7aa7c7;
+      border-radius: 4px;
+      margin-right: 10px;
+      position: relative;
+      margin-top:-2px;
+    }
+
+    .custom-checkbox.checked::after {
+      content: "✓";
+      position: absolute;
+      top: -5px;
+      left: 3px;
+      font-size: 20px;
+      color: #0077aa;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Thriftopia – Terms & Conditions</h1>
+
+    <h2>What You Can Sell</h2>
+    <p style="font-size: 12px;">You can only sell or rent clothes on Thriftopia. No shoes, electronics, makeup, or other non-clothing items.</p>
+    <ul>
+      <li>Clean</li>
+      <li>In good condition (no tears, major stains, or broken zippers)</li>
+      <li>Owned by you (don’t sell stolen or counterfeit items)</li>
+    </ul>
+
+    <h2>Condition of Items</h2>
+    <ul>
+      <li>Clothes listed must be freshly washed and ready to wear.</li>
+      <li>Damaged items must be clearly described in the listing (if allowed).</li>
+      <li>You should be honest about size, condition, and brand.</li>
+    </ul>
+
+    <h2>Payments</h2>
+    <ul>
+      <li>Payments can be made through eSewa or Cash on Delivery (COD).</li>
+      <li>Sellers will get paid once the buyer confirms delivery.</li>
+      <li>Thriftopia may charge a small service fee per transaction.</li>
+    </ul>
+
+    <h2>Delivery & Returns</h2>
+    <ul>
+      <li>Sellers are responsible for packing and handing over clothes for delivery.</li>
+      <li>Buyers must check the item right away and report any problems within 2 days.</li>
+      <li>If the item is not as described, Thriftopia will help solve the issue.</li>
+    </ul>
+
+    <h2>What’s Not Allowed</h2>
+    <ul>
+      <li>No selling of non-clothing items (shoes, gadgets, etc.)</li>
+      <li>No selling fake, stolen, or offensive clothing.</li>
+      <li>No spamming or using the site for illegal activities.</li>
+    </ul>
+
+    <h2>Disputes</h2>
+    <ul>
+      <li>Buyers or sellers can report issues through the Feedback/Help section.</li>
+      <li>Thriftopia will review and try to resolve disputes fairly.</li>
+      <li>If rules are broken, Thriftopia may suspend your account.</li>
+    </ul>
+
+    <h2>Be Responsible</h2>
+    <ul>
+      <li>You are responsible for what you post and sell.</li>
+      <li>Keep your profile info true and up to date.</li>
+      <li>Treat others with respect.</li>
+    </ul>
+
+    <h2>Changes to Rules</h2>
+    <p style="font-size: 12px;">Thriftopia may update these terms from time to time. We’ll notify users of any major changes.</p>
+
+    <h2>Have questions or need help?</h2>
+    <p style="font-size: 13px;">Email us at <a href="mailto:thriftopia@gmail.com">thriftopia@gmail.com</a></p>
+
+    <div class="footer">
+      <label class="checkbox-container">
+        <div id="tickBox" class="custom-checkbox"></div>
+        <span>Accept all terms and conditions</span>
+        <input type="checkbox" id="acceptCheckbox">
+      </label>
+    </div>
+  </div>
+
+  <script>
+    const tickBox = document.getElementById('tickBox');
+    const checkbox = document.getElementById('acceptCheckbox');
+
+    tickBox.addEventListener('click', () => {
+      tickBox.classList.toggle('checked');
+      checkbox.checked = !checkbox.checked;
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 50b0cda53894dc9aebb834ca5c3d13445b7950ad
