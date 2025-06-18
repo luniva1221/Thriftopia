@@ -5,31 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #d2e7f0;
-      display: flex;
-      height: 100vh;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      background-color: #c5d0d6;
-      width: 60px;
+      background-color: #f3f7f9;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding-top: 1rem;
-      gap: 1.5rem;
-      
+      min-height: 100vh;
     }
+
+    
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: linear-gradient(
+    to right,
+    #e5eff4,
+    
+  );
+  height: 95px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #888; /* nav line */
+}
+
+
+    .logo img {
+      height: 90px;
+      width: auto;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    nav a.signin {
+      background-color: #017a3e;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .signin:hover {
+      background-color: #019e54;
+      transform: scale(1.05);
+    }
+
+
+    .main-container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+  background-color: #f3f7f9;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  gap: 1.5rem;
+  border-right: 1px solid #888; /* sidebar line */
+}
+
 
     .sidebar i {
       font-size: 1.5rem;
@@ -42,9 +92,8 @@
       color: #555;
     }
 
-    /* Main content */
     .product-page {
-      background-color: #dfebf0;
+      background-color: #f3f7f9;
       flex: 1;
       display: flex;
       align-items: center;
@@ -53,7 +102,7 @@
     }
 
     .product-card {
-      background-color: #dfebf0;
+      background-color: #f3f7f9;
       border-radius: 12px;
       padding: 2rem;
       display: flex;
@@ -117,8 +166,24 @@
     }
 
     input:focus {
-      outline: 2px solid #d5d8dc;
+      outline: 2px solid #f3f7f9;
     }
+    .buy-now-btn {
+  background-color: #0fa158;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.buy-now-btn:hover {
+  background-color: #0fa158;
+  transform: scale(1.05);
+}
+
 
     @media (max-width: 768px) {
       .product-card {
@@ -135,92 +200,71 @@
         width: 100%;
       }
     }
-    .upload-section {
-  display: none; /* hidden at first */
-}
-.upload-section.active {
-  display: block; /* show when 'active' class is added */
-}
 
+    .upload-section {
+      display: none;
+    }
+
+    .upload-section.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <i class="fa-solid fa-house"></i>
-    <i class="fa-solid fa-plus"></i>
-    <button id="addProductBtn" title="Add"><i class="fa-solid fa-square-plus"></i></button>
+ 
+  <header>
+    <div class="logo">
+      <img src="new logo.png" alt="Thriftopia Logo">
+    </div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">SHOP</a>
+      <a href="#">About Us</a>
+      <a href="login.html" class="signin">Log In</a>
+    </nav>
+  </header>
 
-  </div>
+  
+  <div class="main-container">
+    
+    <div class="sidebar">
+      <i class="fa-solid fa-house"></i>
+      <i class="fa-solid fa-plus"></i>
 
-  <!-- Main Content -->
-  <div class="product-page">
-    <div class="product-card">
-      <div class="product-image">
-        <img src="vintage.jpeg" alt="Flower printed crop top">
-      </div>
-      <div class="product-details">
-        <h2>Flower printed crop top</h2>
-        <div class="price">Rs. 550</div>
-        <p>“Gently used and in excellent condition. Clean, washed, and ready to wear!”</p>
+    </div>
 
-        <div class="seller">
-          <div class="seller-title"><i class="fa-solid fa-user"></i>SELLER :</div>
-          <div class="input-group">
-            <input type="text" placeholder="User name">
-            <input type="text" placeholder="Contact">
-          </div>
-          <div class="input-group">
-            <input type="text" placeholder="Instagram">
+   
+    <div class="product-page">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="vintage.jpeg" alt="Flower printed crop top">
+        </div>
+        <div class="product-details">
+          <h2>Flower printed crop top</h2>
+          <div class="price">Rs. 550</div>
+          <p>“Gently used and in excellent condition. Clean, washed, and ready to wear!”</p>
+
+          <div class="seller">
+            <div class="seller-title"><i class="fa-solid fa-user"></i>SELLER :</div>
+            <div class="input-group">
+              <input type="text" placeholder="User name">
+              <input type="text" placeholder="Contact">
+            </div>
+            <div class="input-group">
+              <input type="text" placeholder="Instagram">
+              
+            </div>
+            <div class="input-group">
+              <button type="submit" class="buy-now-btn">BUY NOW</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script>
-  const addBtn = document.getElementById('addProductBtn');
-  const uploadSection = document.querySelector('.upload-section');
 
-  addBtn.addEventListener('click', () => {
-    uploadSection.classList.toggle('active'); // show/hide the form
-  });
-
-  // Existing code for form submission (keep this below)
-  document.getElementById('productForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const imageInput = document.getElementById('productImage');
-    const name = document.getElementById('productName').value;
-    const price = document.getElementById('productPrice').value;
-    const file = imageInput.files[0];
-
-    if (!file || !file.type.startsWith('image/')) {
-      alert('Please upload a valid image file.');
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      const imageUrl = event.target.result;
-
-      const newItem = document.createElement('div');
-      newItem.className = 'item';
-      newItem.innerHTML = `
-        <img src="${imageUrl}" alt="${name}">
-        <p><strong>${name}</strong></p>
-        <p>Rs. ${price}</p>
-      `;
-
-      document.querySelector('.grid').prepend(newItem);
-    };
-
-    reader.readAsDataURL(file);
-    document.getElementById('productForm').reset();
-    uploadSection.classList.remove('active'); // hide the form after adding
-  });
-</script>
-
-
+ 
+  
 </body>
 </html>
