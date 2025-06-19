@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Thriftopia</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Sarabun', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      column-count: 4;
+      column-gap: 10px;
+      padding: 10px;
+    }
+
+    .background-grid img {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      break-inside: avoid;
+    }
+
+    .overlay {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .overlay-content {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 700px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .overlay-content h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .overlay-content p {
+      font-size: 18px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .background-grid {
+        column-count: 2;
+      }
+
+      .overlay-content h1 {
+        font-size: 32px;
+      }
+
+      .overlay-content p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-grid">
+    <img src="skirt.jpg" alt="">
+    <img src="pink.jpg" alt="" width="350px" height="750px">
+    <img src="frok.jpg" alt="">
+    <img src="dadsweater.jpg" alt="">
+  </div>
+
+  <div class="overlay">
+    <div class="overlay-content">
+      <h1>About Us</h1>
+      <p><strong>Thriftopia</strong> is an online thrift platform created by a group of passionate students aiming to promote sustainable fashion in Nepal.</p>
+      <p>Our mission is to reduce fashion waste and make stylish, second-hand clothing accessible to everyone. We believe in mindful shopping, affordability, and empowering individuals to make eco-friendly choices.</p>
+      <p>Whether you're here to buy or sell, we’ve built Thriftopia to be your trusted, user-friendly space.</p>
+      <p>Thank you for being a part of the Thriftopia journey. Together, we’re making fashion better – one reused piece at a time!</p>
+    </div>
+  </div>
+
+</body>
+</html>
